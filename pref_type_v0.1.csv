@@ -1,0 +1,16 @@
+﻿accord_1,accord_2,color_1,color_code_1,color_2,color_code_2,type_name,type_description
+FRESH,MUSKY,라이트블루,#A9D6E5,아이보리,#F5F1E8,THE PURE,맑고 깨끗한 느낌이 연상되는 투명한 향
+FRESH,FLORAL,라이트블루,#A9D6E5,로즈핑크,#E87EA1,THE VIVID,산뜻함 위에 화사한 생기가 더해져 선명하게 느껴지는 향
+FRESH,SPICY,라이트블루,#A9D6E5,퍼플,#7B61FF,THE SHARP,선명하고 또렷한 분위기로 긴장감이 느껴지는 향
+FRESH,WOODY,라이트블루,#A9D6E5,그린,#7FAE8A,THE NATURAL,자연스럽고 담백한 무드로 편안하게 느껴지는 향
+FRESH,SWEET,라이트블루,#A9D6E5,옐로우,#F6E27A,THE LIVELY,상큼함과 달콤함이 어우러진 생기 있는 향
+WOODY,SPICY,그린,#7FAE8A,퍼플,#7B61FF,THE DEEP,묵직하고 깊이감 있는 분위기가 오래 남는 향
+WOODY,MUSKY,그린,#7FAE8A,아이보리,#F5F1E8,THE CALM,차분하고 안정적인 무드로 편안함을 주는 향
+WOODY,SWEET,그린,#7FAE8A,옐로우,#F6E27A,THE WARM,따뜻한 온기가 은은하게 감도는 부드러운 향
+WOODY,FLORAL,그린,#7FAE8A,로즈핑크,#E87EA1,THE HARMONY,자연스러움과 화사함이 균형있게 조화로운 향
+FLORAL,MUSKY,로즈핑크,#E87EA1,아이보리,#F5F1E8,THE SOFT,부드럽고 포근한 감성이 자연스럽게 느껴지는 향
+FLORAL,SWEET,로즈핑크,#E87EA1,옐로우,#F6E27A,THE LOVELY,은은한 달콤함과 화사함이 어우러진 사랑스러운 향
+MUSKY,SWEET,아이보리,#F5F1E8,옐로우,#F6E27A,THE SILKY,매끄럽고 부드러운 질감이 느껴지는 향
+SPICY,FLORAL,퍼플,#7B61FF,로즈핑크,#E87EA1,THE ALLURE,관능적이고 매혹적인 분위기가 인상적인 향
+SPICY,SWEET,퍼플,#7B61FF,옐로우,#F6E27A,THE BOLD,강렬하면서도 대담한 인상이 또렷하게 느껴지는 향
+MUSKY,SPICY,아이보리,#F5F1E8,퍼플,#7B61FF,THE MYSTIC,깊고 신비로운 분위기가 은밀하게 감도는 향

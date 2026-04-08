@@ -1,0 +1,202 @@
+﻿Perfume Metadata Template,,,,,,,,,,,,,,,,,,
+perfume_id,brand_name_en,brand_name_kr,perfume_name_en,perfume_name_kr,is_active,gender,accords,main_accords_1,main_accords_1_score,main_accords_2,main_accords_2_score,main_accords_3,main_accords_3_score,sillage,longevity,season,image_path,description
+PERFUME_001,DYPTIQUE,딥티크,Fleur de Peau Eau de Parfum,오 드 퍼퓸 플레르 드 뽀,1,UNISEX,MUSKY|POWDERY|IRIS|ALDEHYDIC|SOFT SPICY|AMBER|FLORAL|WOODY|FRESH|EARTHY,MUSKY,3,FLORAL,2,FRESH,1,MODERATE,MODERATE,SPRING|FALL|WINTER|SUMMER,,살결처럼 부드럽게 퍼지는 머스크와 아이리스의 따뜻한 향수
+PERFUME_002,LE LABO,르 라보,Another 13,아나더 13,1,UNISEX,MUSKY|AMBER|WOODY|ANIMALIC|FRUITY|POWDERY|FLORAL,MUSKY,3,SWEET,2,FRESH,1,MODERATE,LONG_LASTING,SPRING|FALL|SUMMER|WINTER,,차갑고 투명한 머스크가 은은하게 스며드는 미니멀한 향수
+PERFUME_003,MAISON MARGIELA,메종 마르지엘라,Lazy Sunday Morning,레이지 선데이 모닝,1,UNISEX,MUSKY|FRESH|WHITE FLORAL|ALDEHYDIC|ROSE|POWDERY|FLORAL|SOAPY|IRIS|SWEET,MUSKY,3,FRESH,2,FLORAL,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,햇살에 말린 이불처럼 깨끗하고 포근한 일상의 여유를 담은 향수
+PERFUME_004,CHANEL,샤넬,Bleu de Chanel,블루 드 샤넬,1,MALE,CITRUS|WOODY|FRESH SPICY|AROMATIC|AMBER|SMOKY|BALSAMIC|WARM SPICY|GREEN|FRESH,CITRUS,3,WOODY,2,SPICY,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,세련된 시트러스와 깊은 우디가 균형 잡힌 도시적인 남성의 향수
+PERFUME_005,DIOR,디올,Sauvage,소바쥬,1,MALE,FRESH SPICY|AMBER|CITRUS|AROMATIC|MUSKY|WOODY|LAVENDER|HERBAL|WARM SPICY,SPICY,3,SWEET,2,CITRUS,1,STRONG,LONG_LASTING,SPRING|SUMMER|FALL|WINTER,,거칠고 시원한 공기처럼 강렬하게 퍼지는 스파이시 앰버 계열의 향수
+PERFUME_006,HERMÈS,에르메스,Terre d'Hermès,떼르 데르메스,1,MALE,CITRUS|WOODY|FRESH SPICY|AROMATIC|EARTHY|WARM SPICY,CITRUS,3,WOODY,2,SPICY,1,MODERATE,LONG_LASTING,SPRING|FALL|SUMMER|WINTER,,대지의 흙내음과 시트러스가 어우러진 자연적인 깊이를 담은 향수
+PERFUME_007,CHANEL,샤넬,Chanel No 5 Eau de Parfum,샤넬 넘버 5 오 드 퍼퓸,1,FEMALE,WOODY|ALDEHYDIC|FRESH|WHITE FLORAL|POWDERY|EARTHY|YELLOW FLORAL|IRIS|CITRUS|FLORAL,WOODY,3,FRESH,2,FLORAL,1,MODERATE,LONG_LASTING,WINTER|FALL|SPRING|SUMMER,,클래식한 플로럴과 알데하이드가 우아하게 퍼지는 상징적인 향수
+PERFUME_008,BYREDO,바이레도,Gypsy Water,집시 워터,1,UNISEX,WOODY|AROMATIC|FRESH SPICY|CITRUS|POWDERY|VANILLA|AMBER|BALSAMIC|WARM SPICY,WOODY,3,FRESH,2,SPICY,1,INTIMATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,자유로운 감성과 드라이한 우디가 어우러진 보헤미안 무드의 향수
+PERFUME_009,GUCCI,구찌,Gucci Bloom,구찌 블룸,1,FEMALE,WHITE FLORAL|TUBEROSE|FLORAL|ANIMALIC|GREEN,FLORAL,3,MUSKY,2,FRESH,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,풍성한 화이트 플로럴이 꽃밭처럼 펼쳐지는 여성스러운 향수
+PERFUME_010,MAISON MARGIELA,메종 마르지엘라,By the Fireplace,바이 더 파이어플레이스,1,UNISEX,WOODY|VANILLA|BALSAMIC|WARM SPICY|AMBER|POWDERY|NUTTY|MUSKY|SOFT SPICY|SWEET,WOODY,3,SWEET,2,SPICY,1,MODERATE,MODERATE,FALL|WINTER|SPRING|SUMMER,,벽난로의 따뜻한 온기와 달콤한 바닐라가 감싸는 포근한 향수
+PERFUME_011,VIKTOR&ROLF,빅터앤롤프,Spicebomb,스파이스밤,1,MALE,WARM SPICY|CINNAMON|TOBACCO|SWEET|SOFT SPICY|LEATHER|AROMATIC|CITRUS,SPICY,3,SWEET,2,WOODY,1,MODERATE,LONG_LASTING,FALL|WINTER|SPRING|SUMMER,,폭발적인 향신료와 따뜻한 우디가 강렬하게 어우러진 남성 향수
+PERFUME_012,TOM FORD,톰 포드,Oud Wood,오드 우드,1,UNISEX,WOODY|WARM SPICY|OUD|AROMATIC|VANILLA|BALSAMIC|FRESH SPICY|AMBER|POWDERY|SWEET,WOODY,3,SPICY,2,FRESH,1,MODERATE,MODERATE,FALL|WINTER|SPRING|SUMMER,,부드럽고 고급스러운 우드와 스파이스가 깊이를 더하는 향수
+PERFUME_013,ISSEY MIYAKE,이세이 미야케,L'Eau d'Issey Pour Homme,로 디세이 뿌르 옴므,1,MALE,CITRUS|AROMATIC|FRESH SPICY|WOODY|FLORAL|GREEN,CITRUS,3,FRESH,2,SPICY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,맑은 물처럼 투명하게 퍼지는 시트러스와 아쿠아 계열의 향수
+PERFUME_014,BVLGARI,불가리,Aqva Pour Homme,아쿠아 뿌르 옴므,1,MALE,CITRUS|MARINE|AROMATIC|AQUATIC|WOODY|LAVENDER|FRESH SPICY|POWDERY,CITRUS,3,FRESH,2,WOODY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,짭짤한 바닷바람과 청량한 아쿠아가 어우러진 시원한 향수
+PERFUME_015,JO MALONE LONDON,조 말론 런던,Wood Sage & Sea Salt,우드 세이지 앤 씨 솔트,1,UNISEX,AROMATIC|SALTY|MARINE|CITRUS|MUSKY|HERBAL|SOFT SPICY|FLORAL|AQUATIC,FRESH,3,CITRUS,2,MUSKY,1,INTIMATE,WEAK,SUMMER|SPRING|FALL|WINTER,,해안의 바람과 허브의 자유로운 감성을 담은 자연적인 향수
+PERFUME_016,CHANEL,샤넬,Chance Eau Tendre,샹스 오 땅드르,1,FEMALE,FLORAL|FRUITY|CITRUS|SWEET|FRESH SPICY|POWDERY|WHITE FLORAL|MUSKY|GREEN|IRIS,FLORAL,3,SWEET,2,CITRUS,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,과일과 플로럴이 부드럽게 어우러진 사랑스러운 분위기의 향수
+PERFUME_017,DIOR,디올,J'adore Parfum d'Eau,쟈도르 퍼퓸 도,1,FEMALE,WHITE FLORAL|FLORAL|GREEN|CITRUS|FRUITY,FLORAL,3,FRESH,2,CITRUS,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,물처럼 맑고 깨끗하게 피어나는 순수한 플로럴의 향수
+PERFUME_018,JO MALONE LONDON,조 말론 런던,Orange Blossom,오렌지 블라썸,1,UNISEX,WHITE FLORAL|CITRUS|FLORAL|SWEET|FRESH,FLORAL,3,CITRUS,2,SWEET,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,오렌지꽃의 상큼함과 깨끗함이 어우러진 밝은 인상의 향수
+PERFUME_019,ACQUA DI PARMA,아쿠아 디 파르마,Acqua di Parma Colonia,콜로니아,1,UNISEX,CITRUS|AROMATIC|FRESH SPICY|WOODY|LAVENDER|FRESH|MUSKY,CITRUS,3,FRESH,2,SPICY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,클래식한 시트러스의 산뜻함과 우아함이 공존하는 향수
+PERFUME_020,DIOR,디올,Dior Homme Sport,디올 옴므 스포츠,1,MALE,CITRUS|FRESH SPICY|AROMATIC|WOODY|FRESH,CITRUS,3,SPICY,2,FRESH,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,상쾌한 시트러스와 스파이시가 활력을 더하는 경쾌한 향수
+PERFUME_021,CHANEL,샤넬,Allure Homme Sport,알뤼르 옴므 스포츠,1,MALE,CITRUS|AROMATIC|VANILLA|ALDEHYDIC|MARINE|SWEET|FRESH SPICY|FRESH|AMBER|POWDERY,CITRUS,3,FRESH,2,SWEET,1,MODERATE,LONG_LASTING,SUMMER|SPRING|FALL|WINTER,,시원함과 따뜻함이 공존하는 세련된 스포츠 감성의 향수
+PERFUME_022,DOLCE&GABBANA,돌체앤가바나,Light Blue,라이트 블루,1,FEMALE,CITRUS|WOODY|FRESH|FRUITY|AROMATIC|MUSKY|POWDERY|GREEN,CITRUS,3,WOODY,2,FRESH,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,햇살 아래 바다와 과일의 상큼함이 어우러진 청량한 향수
+PERFUME_023,VERSACE,베르사체,Versace Pour Homme,베르사체 뿌르 옴므,1,MALE,CITRUS|AROMATIC|FRESH SPICY|FLORAL|ROSE|GREEN,CITRUS,3,FRESH,2,SPICY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,시트러스와 아로마틱이 조화를 이루는 깔끔한 남성 향수
+PERFUME_024,CALVIN KLEIN,캘빈 클라인,CK One,씨케이 원,1,UNISEX,CITRUS|GREEN|WOODY|POWDERY|WHITE FLORAL|FRESH|AROMATIC|FRESH SPICY|FLORAL|MUSKY,CITRUS,3,FRESH,2,WOODY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,누구나 편안하게 어울리는 깨끗하고 가벼운 유니섹스 향수
+PERFUME_025,JO MALONE LONDON,조 말론 런던,Lime Basil & Mandarin,라임 바질 앤 만다린,1,UNISEX,CITRUS|AROMATIC|FRESH SPICY|GREEN|WOODY|HERBAL,CITRUS,3,FRESH,2,SPICY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,라임과 허브가 어우러진 상쾌하고 개성 있는 향수
+PERFUME_026,MAISON FRANCIS KURKDJIAN,메종 프란시스 커정,Aqua Universalis,아쿠아 유니버설리스,1,UNISEX,CITRUS|WHITE FLORAL|FRESH|MUSKY|AROMATIC,CITRUS,3,FLORAL,2,FRESH,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,막 세탁한 옷처럼 깨끗하고 투명하게 퍼지는 향수
+PERFUME_027,CLEAN,클린,Warm Cotton,웜 코튼,1,UNISEX,CITRUS|AROMATIC|MARINE|MUSKY|FRESH SPICY|SALTY|FRESH|WHITE FLORAL|POWDERY|SWEET,CITRUS,3,FRESH,2,MUSKY,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,햇볕에 말린 면처럼 포근하고 편안한 감성의 향수
+PERFUME_028,NARCISO RODRIGUEZ,나르시소 로드리게즈,Narciso Rodriguez For Her,나르시소 로드리게즈 포 허,1,FEMALE,MUSKY|POWDERY|WHITE FLORAL|CITRUS|FLORAL|FRUITY|WOODY|AMBER|ANIMALIC|SWEET,MUSKY,3,FLORAL,2,CITRUS,1,MODERATE,LONG_LASTING,FALL|WINTER|SPRING|SUMMER,,부드러운 머스크와 플로럴이 관능적으로 어우러진 향수
+PERFUME_029,BYREDO,바이레도,Blanche,블랑쉬,1,UNISEX,FRESH|ALDEHYDIC|MUSKY|POWDERY|FLORAL|ROSE|VIOLET|WOODY|SOAPY|WHITE FLORAL,FRESH,3,MUSKY,2,FLORAL,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,깨끗한 비누와 플로럴이 은은하게 어우러진 순수한 향수
+PERFUME_030,GLOSSIER,글로시에,You,유,1,UNISEX,MUSKY|IRIS|AMBER|POWDERY|SOFT SPICY|VIOLET|FLORAL|EARTHY,MUSKY,3,FLORAL,2,SWEET,1,MODERATE,LONG_LASTING,SPRING|SUMMER|FALL|WINTER,,피부에 자연스럽게 스며드는 부드러운 머스크 중심의 향수
+PERFUME_031,Saint Laurent,입생로랑,Libre,리브르,1,FEMALE,WHITE FLORAL|CITRUS|LAVENDER|VANILLA|AROMATIC|SWEET|POWDERY|ANIMALIC|MUSKY|WOODY,FLORAL,3,CITRUS,2,SWEET,1,MODERATE,LONG_LASTING,FALL|SPRING|WINTER|SUMMER,,라벤더와 바닐라가 대비를 이루는 자유로운 여성의 향수
+PERFUME_032,Lancôme,랑콤,La Vie Est Belle,라비에벨,1,FEMALE,SWEET|VANILLA|FRUITY|PATCHOULI|WOODY|WHITE FLORAL|POWDERY|IRIS|EARTHY|WARM SPICY,SWEET,3,WOODY,2,FLORAL,1,STRONG,LONG_LASTING,WINTER|FALL|SPRING|SUMMER,,달콤한 프랄린과 플로럴이 행복한 감정을 전하는 향수
+PERFUME_033,Dior,디올,Poison,푸아종,1,FEMALE,FRUITY|SWEET|AMBER|WHITE FLORAL|WOODY|WARM SPICY|TUBEROSE|BALSAMIC|FLORAL|HONEY,SWEET,3,FLORAL,2,WOODY,1,ENORMOUS,ETERNAL,WINTER|FALL|SPRING|SUMMER,,짙고 달콤한 플로럴이 신비로운 분위기를 자아내는 향수
+PERFUME_034,Chanel,샤넬,Chance Eau Fraiche,샹스 오 프레쉬,1,FEMALE,WOODY|CITRUS|AROMATIC|FLORAL|MUSKY|POWDERY|EARTHY|WHITE FLORAL|PATCHOULI|FRESH,WOODY,3,CITRUS,2,FRESH,1,MODERATE,MODERATE,SUMMER|SPRING|FALL|WINTER,,상쾌한 시트러스와 그린이 활기를 더하는 밝은 향수
+PERFUME_035,Marc Jacobs,마크 제이콥스,Daisy Love,데이지 러브,1,FEMALE,FRUITY|MUSKY|FLORAL|AROMATIC|WOODY|SWEET|POWDERY|MARINE|HERBAL|GREEN,SWEET,3,MUSKY,2,FLORAL,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,달콤한 과일과 부드러운 꽃이 어우러진 사랑스러운 향수
+PERFUME_036,Versace,베르사체,Bright Crystal,브라이트 크리스탈,1,FEMALE,FLORAL|CITRUS|FRESH|WOODY|ROSE|FRESH SPICY|AQUATIC,FLORAL,3,CITRUS,2,FRESH,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,맑은 과일과 플로럴이 투명하게 퍼지는 여성스러운 향수
+PERFUME_037,Tom Ford,톰 포드,Noir Extreme,누아 익스트림,1,MALE,WARM SPICY|SWEET|VANILLA|WOODY|POWDERY|AMBER|FRESH SPICY|AROMATIC|WHITE FLORAL|BALSAMIC,SPICY,3,SWEET,2,WOODY,1,MODERATE,LONG_LASTING,WINTER|FALL|SPRING|SUMMER,,달콤하고 크리미한 스파이스가 깊이를 더하는 매혹적인 향수
+PERFUME_038,Saint Laurent,입생로랑,La Nuit de l'Homme,라 뉘 드 옴므,1,MALE,AROMATIC|WARM SPICY|LAVENDER|WOODY|FRESH SPICY|CITRUS,FRESH,3,SPICY,2,FLORAL,1,MODERATE,MODERATE,FALL|WINTER|SPRING|SUMMER,,은은한 스파이시와 따뜻한 분위기가 어우러진 밤의 향수
+PERFUME_039,Maison Francis Kurkdjian,메종 프란시스 커정,Baccarat Rouge 540,바카라 루쥬 540,1,UNISEX,WOODY|AMBER|WARM SPICY|METALLIC|FRESH SPICY|AROMATIC|WHITE FLORAL|ANIMALIC|FRESH,WOODY,3,SWEET,2,SPICY,1,STRONG,LONG_LASTING,FALL|WINTER|SPRING|SUMMER,,달콤하고 투명한 앰버가 공기처럼 퍼지는 독특한 향수
+PERFUME_040,Maison Martin Margiela,메종 마틴 마르지엘라,Bubble Bath,버블 배스,1,UNISEX,SOAPY|MUSKY|COCONUT|LAVENDER|POWDERY|SWEET|WHITE FLORAL|ROSE|CITRUS|LACTONIC,FRESH,3,MUSKY,2,SWEET,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,거품처럼 깨끗하고 포근한 비누 향을 담은 편안한 향수
+PERFUME_041,Clean,클린,Clean Skin,클린 스킨,1,FEMALE,MUSKY|POWDERY|ANIMALIC|AQUATIC|OZONIC,MUSKY,3,FRESH,2,FLORAL,1,INTIMATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,피부처럼 부드럽고 은은하게 남는 머스크 중심의 향수
+PERFUME_042,Juliette Has A Gun,줄리엣 해즈 어 건,Not A Perfume,낫 어 퍼퓸,1,UNISEX,AMBER|WOODY|MUSKY|BALSAMIC|WARM SPICY,SWEET,3,WOODY,2,MUSKY,1,INTIMATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,단일 머스크가 투명하게 퍼지는 미니멀한 향수
+PERFUME_043,Giorgio Armani,조르지오 아르마니,Acqua di Gio Profumo,아쿠아 디 지오 프로푸모,1,MALE,AROMATIC|MARINE|FRESH SPICY|AMBER|WOODY|SMOKY|WARM SPICY|CITRUS|BALSAMIC|PATCHOULI,FRESH,3,SPICY,2,WOODY,1,MODERATE,LONG_LASTING,SUMMER|SPRING|FALL|WINTER,,깊은 바다와 인센스가 어우러진 묵직한 남성 향수
+PERFUME_044,Prada,프라다,Luna Rossa Carbon Eau de Toilette,루나 로사 카본 오 드 뚜왈렛,1,MALE,FRESH SPICY|AMBER|LAVENDER|AROMATIC|METALLIC|CITRUS|MUSKY|WOODY|MINERAL|EARTHY,SPICY,3,SWEET,2,FLORAL,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,미네랄과 스파이시가 조화를 이루는 현대적인 향수
+PERFUME_045,Montblanc,몽블랑,Explorer,익스플로러,1,MALE,WOODY|CITRUS|AROMATIC|AMBER|MUSKY|FRESH SPICY|SOFT SPICY|OUD|WARM SPICY|EARTHY,WOODY,3,CITRUS,2,FRESH,1,MODERATE,MODERATE,SPRING|SUMMER|FALL|WINTER,,시트러스와 우디가 균형 잡힌 탐험가 감성의 향수
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

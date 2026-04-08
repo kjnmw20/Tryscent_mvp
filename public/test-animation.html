@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Ripple Animation Test V3</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .mobile-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
+      max-height: 850px;
+      /* 그라데이션 중간이 탁해지지 않도록 중간색(cyan-ish)을 추가하고, 양 끝의 지정된 색상 비중을 늘렸습니다. */
+      background: linear-gradient(135deg, #7FAE8A 0%, #7FAE8A 30%, #85C0C4 60%, #A9D6E5 100%);
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .ripple-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 1px;
+    }
+
+    /* Water ripple layers */
+    .ripple {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      margin-top: -50px; 
+      margin-left: -50px; 
+      border-radius: 50%;
+      /* Making it look like an actual water wave with highlights */
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 
+        0 0 10px 2px rgba(255, 255, 255, 0.2),
+        inset 0 0 15px 5px rgba(255, 255, 255, 0.15),
+        inset 5px 5px 15px rgba(169, 214, 229, 0.2); 
+      filter: blur(2px);
+      will-change: transform, opacity;
+      /* Linear timing ensures consistent distance between waves like physical ripples */
+      animation: water-root-ripple 12s linear infinite;
+    }
+
+    /* 6 multiple waves for deeper ripple effect */
+    .ripple-1 { animation-delay: 0s; }
+    .ripple-2 { animation-delay: 2s; }
+    .ripple-3 { animation-delay: 4s; }
+    .ripple-4 { animation-delay: 6s; }
+    .ripple-5 { animation-delay: 8s; }
+    .ripple-6 { animation-delay: 10s; }
+
+    @keyframes water-root-ripple {
+      0% {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      5% {
+        opacity: 0.9;
+      }
+      60% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(10);
+        opacity: 0;
+      }
+    }
+
+    /* Subtle center drop origin */
+    .center-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      margin-top: -40px;
+      margin-left: -40px;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      filter: blur(10px);
+      mix-blend-mode: overlay;
+      animation: center-pulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes center-pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.3); opacity: 1; }
+    }
+
+    .ui-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .ui-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .ui-subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      font-weight: 300;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="mobile-container">
+    <div class="center-glow"></div>
+    <div class="ripple-wrapper">
+      <div class="ripple ripple-1"></div>
+      <div class="ripple ripple-2"></div>
+      <div class="ripple ripple-3"></div>
+      <div class="ripple ripple-4"></div>
+      <div class="ripple ripple-5"></div>
+      <div class="ripple ripple-6"></div>
+    </div>
+    <div class="ui-layer">
+      <div class="ui-title">당신의 취향 결과</div>
+      <div class="ui-subtitle">물결처럼 퍼지는 향료</div>
+    </div>
+  </div>
+</body>
+</html>
