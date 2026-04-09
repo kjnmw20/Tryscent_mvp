@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import svgPaths from "../../imports/svg-krmgb6cs7e";
 import { calculateRecommendation, accordLabels, MoodCode, PlaceCode, EnergyCode, SeasonCode, Accord, getPrefType, moodLabels, placeLabels, seasonLabels, getRecommendedPerfumes } from "../../utils/recommendation";
@@ -6,10 +6,14 @@ import { useEffect, useState, useMemo } from "react";
 import { Perfume, perfumesDB } from "../../data/perfumes";
 
 export default function Result() {
-  const [q1State] = useState<string>(() => sessionStorage.getItem("q1") || "FEMALE");
-  const [q2State] = useState<MoodCode>(() => (sessionStorage.getItem("q2") as MoodCode) || "NEUTRAL");
-  const [q3State] = useState<EnergyCode>(() => (sessionStorage.getItem("q3") as EnergyCode) || "CALM");
-  const [q4State] = useState<PlaceCode>(() => (sessionStorage.getItem("q4") as PlaceCode) || "NEUTRAL");
+  const [searchParams] = useSearchParams();
+
+  // URL 파라미터에서 먼저 읽고, 없으면 세션 스토리지에서 읽음
+  const [q1State] = useState<string>(() => searchParams.get("q1") || sessionStorage.getItem("q1") || "FEMALE");
+  const [q2State] = useState<MoodCode>(() => (searchParams.get("q2") as MoodCode) || (sessionStorage.getItem("q2") as MoodCode) || "NEUTRAL");
+  const [q3State] = useState<EnergyCode>(() => (searchParams.get("q3") as EnergyCode) || (sessionStorage.getItem("q3") as EnergyCode) || "CALM");
+  const [q4State] = useState<PlaceCode>(() => (searchParams.get("q4") as PlaceCode) || (sessionStorage.getItem("q4") as PlaceCode) || "NEUTRAL");
+  const [q5State] = useState<string>(() => searchParams.get("q5") || sessionStorage.getItem("q5") || "NEUTRAL");
 
   const [topAccords, setTopAccords] = useState<Accord[]>(() => {
     const recommended = calculateRecommendation(q2State, q4State);
@@ -138,10 +142,20 @@ export default function Result() {
   }, [prefType, animParams]);
 
   const handleShare = async () => {
+    // 결과 전송용 쿼리 스트링 생성
+    const params = new URLSearchParams();
+    params.set("q1", q1State);
+    params.set("q2", q2State);
+    params.set("q3", q3State);
+    params.set("q4", q4State);
+    if (q5State) params.set("q5", q5State);
+
+    const shareUrl = `${window.location.origin}/result?${params.toString()}`;
+
     const shareData = {
       title: 'Tryscent - 내 향수 취향 결과',
       text: `트라이센트 테스트 결과, 저는 '${prefType.type_name}' 유형이 나왔어요! 당신에게 어울리는 향수도 찾아보세요.`,
-      url: window.location.origin,
+      url: shareUrl,
     };
 
     // 1. Try Native Share (Mobile iOS/Android)
@@ -156,10 +170,10 @@ export default function Result() {
     }
 
     // 2. Fallback to Clipboard (Desktop/Other)
-    if (navigator.clipboard && window.isSecureContext) {
+    if (navigator.clipboard) {
       try {
-        await navigator.clipboard.writeText(window.location.origin);
-        alert('링크가 복사되었습니다! 원하시는 곳에 붙여넣어 공유해 보세요.');
+        await navigator.clipboard.writeText(shareUrl);
+        alert('내 결과를 확인 할 수 있는 링크가 복사되었습니다! 원하시는 곳에 붙여넣어 공유해 보세요.');
         return;
       } catch (err) {
         console.error('Clipboard copy failed:', err);
@@ -167,7 +181,7 @@ export default function Result() {
     }
 
     // 3. Final Fallback for non-secure dev environment (HTTP)
-    alert(`공유 링크: ${window.location.origin}\n(현재 환경에서는 자동 복사를 지원하지 않아 수동으로 복사해 주세요.)`);
+    alert(`공유 링크: ${shareUrl}\n(현재 환경에서는 자동 복사를 지원하지 않아 수동으로 복사해 주세요.)`);
   };
 
   return (
