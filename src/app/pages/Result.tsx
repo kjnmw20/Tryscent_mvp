@@ -15,6 +15,9 @@ export default function Result() {
   const [q4State] = useState<PlaceCode>(() => (searchParams.get("q4") as PlaceCode) || (sessionStorage.getItem("q4") as PlaceCode) || "NEUTRAL");
   const [q5State] = useState<string>(() => searchParams.get("q5") || sessionStorage.getItem("q5") || "NEUTRAL");
 
+  // 공유 링크로 유입되었는지 확인 (URL 파라미터 존재 여부)
+  const isSharedUrl = searchParams.has("q1");
+
   const [topAccords, setTopAccords] = useState<Accord[]>(() => {
     const recommended = calculateRecommendation(q2State, q4State);
     if (recommended.length >= 2) {
@@ -348,22 +351,32 @@ export default function Result() {
           )}
         </div>
 
-        {/* Share Button (Text Only Style) */}
-        <button
-          onClick={handleShare}
-          className="w-full flex items-center justify-center gap-2 cursor-pointer mt-12 mb-8 active:opacity-60 transition-opacity"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="18" cy="5" r="3" />
-            <circle cx="6" cy="12" r="3" />
-            <circle cx="18" cy="19" r="3" />
-            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-          </svg>
-          <p className="text-[15px] font-medium text-[#9ca3af] tracking-tight">
-            내 취향 공유하기
-          </p>
-        </button>
+        {/* Bottom CTA Section */}
+        {isSharedUrl ? (
+          <Link to="/">
+            <div className="bg-black h-[57.5px] rounded-[12px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex items-center justify-center cursor-pointer mt-12 mb-8">
+              <p className="font-semibold text-[17px] text-white tracking-[-0.4316px]">
+                나도 테스트 해보기
+              </p>
+            </div>
+          </Link>
+        ) : (
+          <button
+            onClick={handleShare}
+            className="w-full flex items-center justify-center gap-2 cursor-pointer mt-12 mb-8 active:opacity-60 transition-opacity"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+            <p className="text-[15px] font-medium text-[#9ca3af] tracking-tight">
+              내 취향 공유하기
+            </p>
+          </button>
+        )}
       </main>
 
       {/* Perfume Detail Full-Screen Popup */}
