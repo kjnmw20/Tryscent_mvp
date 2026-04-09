@@ -55,8 +55,8 @@ export default function Loading() {
   }, [navigate]);
 
   return (
-    <div className="relative min-h-screen w-full" style={{ backgroundImage: "linear-gradient(rgb(255, 255, 255) 0%, rgb(253, 253, 254) 33.333%, rgb(251, 252, 252) 66.667%, rgb(249, 250, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }}>
-      <div className="bg-white relative w-[393px] max-w-full mx-auto shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] h-screen flex flex-col items-center justify-center p-6" data-name="iPhone 16 - 14">
+    <div className="relative min-h-dvh w-full" style={{ backgroundImage: "linear-gradient(rgb(255, 255, 255) 0%, rgb(253, 253, 254) 33.333%, rgb(251, 252, 252) 66.667%, rgb(249, 250, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }}>
+      <div className="bg-white relative w-[393px] max-w-full mx-auto shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] h-dvh flex flex-col items-center justify-center p-6" data-name="iPhone 16 - 14">
         {/* Spinner */}
         <div className="mb-6">
           <Spinner />

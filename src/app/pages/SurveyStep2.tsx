@@ -404,7 +404,7 @@ function Container7() {
 
 function Container({ selectedOption, setSelectedOption }: { selectedOption: number | null; setSelectedOption: (value: number) => void }) {
   return (
-    <div className="bg-white h-screen w-[390px] max-w-full mx-auto shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] relative" data-name="Container">
+    <div className="bg-white h-dvh w-[390px] max-w-full mx-auto shadow-[0px_20px_25px_0px_rgba(0,0,0,0.1),0px_8px_10px_0px_rgba(0,0,0,0.1)] relative" data-name="Container">
       <Container1 selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
       <Container6 
         isEnabled={selectedOption !== null} 
@@ -423,7 +423,7 @@ export default function SurveyStep2() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   
   return (
-    <div className="relative min-h-screen w-full" data-name="디자인 화면 구현" style={{ backgroundImage: "linear-gradient(rgb(255, 255, 255) 0%, rgb(253, 253, 254) 33.333%, rgb(251, 252, 252) 66.667%, rgb(249, 250, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }}>
+    <div className="relative min-h-dvh w-full" data-name="디자인 화면 구현" style={{ backgroundImage: "linear-gradient(rgb(255, 255, 255) 0%, rgb(253, 253, 254) 33.333%, rgb(251, 252, 252) 66.667%, rgb(249, 250, 251) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }}>
       <Container selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
     </div>
   );

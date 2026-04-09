@@ -113,15 +113,15 @@ export default function Result() {
       const angle = Math.random() * Math.PI * 2;
       const r = Math.pow(Math.random(), 0.65);
       const distance = r * maxDist;
-      
+
       const tx = Math.cos(angle) * distance;
       const ty = Math.sin(angle) * distance;
-      
+
       const duration = durationRange[0] + Math.random() * (durationRange[1] - durationRange[0]);
       const delay = -(Math.random() * duration);
       const size = (2.7 + Math.random() * 7.8) * sizeScale;
       const opacity = 0.7 + Math.random() * 0.3;
-      
+
       const color = Math.random() > 0.5 ? prefType.color_code_1 : prefType.color_code_2;
 
       return {
@@ -170,15 +170,15 @@ export default function Result() {
       <main className="pt-[58px] pb-8 px-6">
         {/* Result Image Area (Swapped Layout: Gradient Top, Text Bottom) */}
         <div className="relative w-full aspect-[4/5] mb-[-40px] mt-6 flex flex-col items-center">
-          
+
           {/* Animated Circular Object Area (Top) */}
           <div className="relative w-full flex-[1.5] flex items-center justify-center">
-            
+
             {/* Particles Container */}
             <div className="absolute top-1/2 left-1/2 w-0 h-0 z-[40] pointer-events-none">
               {particles.map(p => (
-                <div 
-                  key={p.id} 
+                <div
+                  key={p.id}
                   className="perfume-particle-v2"
                   style={{
                     width: p.size,
@@ -197,19 +197,19 @@ export default function Result() {
 
             {/* The Circular Gradient Ball (3D) */}
             <div className="relative z-20 flex items-center justify-center">
-               <div 
+              <div
                 className="relative flex items-center justify-center z-10"
                 style={{ width: animParams.ballSize, height: animParams.ballSize }}
-               >
-                  <div 
-                    className="absolute inset-0 rounded-full blur-[14px] saturate-[150%] brightness-[105%] shadow-[0_15px_50px_rgba(0,0,0,0.1)]"
-                    style={{
-                      background: `linear-gradient(135deg, ${prefType.color_code_1} 0%, ${prefType.color_code_2} 100%)`,
-                    }}
-                  />
-                  <div className="absolute top-1 left-2 w-1/2 h-2/5 rounded-full bg-white/40 blur-[12px] rotate-[-20deg] z-20 pointer-events-none" />
-                  <div className="absolute bottom-1 right-2 w-1/2 h-2/5 rounded-full bg-black/5 blur-[15px] z-5 pointer-events-none" />
-               </div>
+              >
+                <div
+                  className="absolute inset-0 rounded-full blur-[14px] saturate-[150%] brightness-[105%] shadow-[0_15px_50px_rgba(0,0,0,0.1)]"
+                  style={{
+                    background: `linear-gradient(135deg, ${prefType.color_code_1} 0%, ${prefType.color_code_2} 100%)`,
+                  }}
+                />
+                <div className="absolute top-1 left-2 w-1/2 h-2/5 rounded-full bg-white/40 blur-[12px] rotate-[-20deg] z-20 pointer-events-none" />
+                <div className="absolute bottom-1 right-2 w-1/2 h-2/5 rounded-full bg-black/5 blur-[15px] z-5 pointer-events-none" />
+              </div>
             </div>
           </div>
 
@@ -285,8 +285,8 @@ export default function Result() {
 
           {recommendedPerfumes.length > 0 ? (
             recommendedPerfumes.map((perfume) => (
-              <div 
-                key={perfume.perfume_id} 
+              <div
+                key={perfume.perfume_id}
                 className="bg-white rounded-[16px] shadow-[0px_4px_12px_0px_rgba(0,0,0,0.08)] p-4 mb-4 flex gap-4 cursor-pointer active:scale-[0.98] transition-transform"
                 onClick={() => setSelectedPerfume(perfume)}
               >
@@ -324,9 +324,9 @@ export default function Result() {
       </main>
 
       {/* Perfume Detail Full-Screen Popup */}
-      <PerfumeDetailPopup 
-        perfume={selectedPerfume} 
-        onClose={() => setSelectedPerfume(null)} 
+      <PerfumeDetailPopup
+        perfume={selectedPerfume}
+        onClose={() => setSelectedPerfume(null)}
       />
     </div>
   );
@@ -343,19 +343,46 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
   return (
     <div className="fixed inset-0 z-[100] flex justify-center items-center bg-white animate-in fade-in duration-200">
       <div className="w-full max-w-[393px] h-full bg-white overflow-hidden relative flex flex-col">
-        
-        {/* Close Button Area (Modified for Full Screen) */}
-        <div className="h-[58px] flex items-center justify-end px-6 shrink-0 border-b border-[#f3f4f6]">
-           <button onClick={onClose} className="p-2 -mr-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M18 6L6 18M6 6L18 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-           </button>
-        </div>
+
+        {/* Header (Matching Result page style) */}
+        <header className="bg-white z-50 px-4 py-2 h-[58px] shadow-sm shrink-0">
+          <div className="relative flex items-center justify-center h-full">
+            {/* Back Button (left side) */}
+            <div className="absolute left-0 top-0 h-full flex items-center justify-center">
+              <button onClick={onClose} className="relative rounded-[16777200px] shrink-0 size-[36px] flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 18L9 12L15 6" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Title */}
+            <h1 className="font-['Inter:Semi_Bold','Noto_Sans_KR:Bold',sans-serif] font-semibold text-[18px] text-[#111827] tracking-[-0.4395px] leading-[27px]">
+              향수 상세
+            </h1>
+
+            {/* Home Button (right side) */}
+            <div className="absolute right-0 top-0 h-full flex items-center justify-center">
+              <Link to="/">
+                <div className="relative rounded-[16777200px] shrink-0 size-[36px] flex items-center justify-center">
+                  <svg className="w-[20px] h-[20px]" fill="none" viewBox="0 0 28.75 31.5">
+                    <path
+                      d={svgPaths.p4cadc00}
+                      stroke="#374151"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </header>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto px-8 pb-12 pt-4">
-          
+        <div className="flex-1 overflow-y-auto px-8 pb-12 pt-8">
+
           {/* 1. Image */}
           <div className="w-full aspect-square bg-white rounded-[24px] mb-2 flex items-center justify-center p-14 overflow-hidden">
             <ImageWithFallback
@@ -394,19 +421,19 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
                 const fontSize = idx === 0 ? "text-[14px]" : idx === 1 ? "text-[12px]" : "text-[11px]";
 
                 return (
-                  <div 
+                  <div
                     key={acc}
                     className={`rounded-full flex items-center justify-center text-center p-2 relative ${size}`}
                   >
                     {/* Blurred Background Glow */}
-                    <div 
+                    <div
                       className="absolute inset-0 rounded-full blur-[8px] opacity-70"
                       style={{
                         background: `radial-gradient(circle, ${color} 0%, ${color}aa 70%, transparent 100%)`,
                       }}
                     />
                     {/* Main Circle */}
-                    <div 
+                    <div
                       className="absolute inset-[10%] rounded-full blur-[4px] opacity-90"
                       style={{ backgroundColor: color }}
                     />
@@ -429,11 +456,10 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
               </div>
               <div className="flex gap-1.5 w-full h-[12px]">
                 {[1, 2, 3, 4].map((step) => (
-                  <div 
+                  <div
                     key={step}
-                    className={`flex-1 h-full rounded-full transition-all duration-500 ${
-                      step <= sillage.level ? 'bg-black' : 'bg-[#e5e7eb]'
-                    }`}
+                    className={`flex-1 h-full rounded-full transition-all duration-500 ${step <= sillage.level ? 'bg-black' : 'bg-[#e5e7eb]'
+                      }`}
                   />
                 ))}
               </div>
@@ -454,11 +480,10 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
               </div>
               <div className="flex gap-1.5 w-full h-[12px]">
                 {[1, 2, 3, 4].map((step) => (
-                  <div 
+                  <div
                     key={step}
-                    className={`flex-1 h-full rounded-full transition-all duration-500 ${
-                      step <= longevity.level ? 'bg-black' : 'bg-[#e5e7eb]'
-                    }`}
+                    className={`flex-1 h-full rounded-full transition-all duration-500 ${step <= longevity.level ? 'bg-black' : 'bg-[#e5e7eb]'
+                      }`}
                   />
                 ))}
               </div>
@@ -470,6 +495,27 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
           </div>
 
         </div>
+
+        {/* 7. Bottom CTA Button Section */}
+        <div className="p-6 pb-10 bg-white border-t border-[#f3f4f6] shrink-0">
+          <a
+            href={`https://search.shopping.naver.com/search/all?query=${encodeURIComponent(perfume.perfume_name_kr)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full h-[56px] bg-[#111827] rounded-[16px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
+          >
+            <span className="text-white text-[16px] font-semibold">향수 보러가기</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M15 3H21V9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M10 14L21 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <p className="text-center mt-3 text-[12px] text-[#9ca3af] font-normal">
+            네이버 쇼핑에서 확인
+          </p>
+        </div>
+
       </div>
     </div>
   );
