@@ -137,17 +137,46 @@ export default function Result() {
     });
   }, [prefType, animParams]);
 
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Tryscent - 내 향수 취향 결과',
+      text: `트라이센트 테스트 결과, 저는 '${prefType.type_name}' 유형이 나왔어요! 당신에게 어울리는 향수도 찾아보세요.`,
+      url: window.location.origin,
+    };
+
+    // 1. Try Native Share (Mobile iOS/Android)
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        if ((err as Error).name === 'AbortError') return;
+        console.error('Native share failed:', err);
+      }
+    }
+
+    // 2. Fallback to Clipboard (Desktop/Other)
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(window.location.origin);
+        alert('링크가 복사되었습니다! 원하시는 곳에 붙여넣어 공유해 보세요.');
+        return;
+      } catch (err) {
+        console.error('Clipboard copy failed:', err);
+      }
+    }
+
+    // 3. Final Fallback for non-secure dev environment (HTTP)
+    alert(`공유 링크: ${window.location.origin}\n(현재 환경에서는 자동 복사를 지원하지 않아 수동으로 복사해 주세요.)`);
+  };
+
   return (
     <div className="bg-white h-full min-h-screen w-full max-w-[393px] mx-auto relative overflow-auto">
-      {/* Header */}
       <header className="fixed top-0 left-0 right-0 max-w-[393px] mx-auto bg-white z-50 px-4 py-2 h-[58px] shadow-sm">
         <div className="relative flex items-center justify-center h-full">
-          {/* Title */}
           <h1 className="font-['Inter:Semi_Bold','Noto_Sans_KR:Bold',sans-serif] font-semibold text-[18px] text-[#111827] tracking-[-0.4395px] leading-[27px]">
             취향 테스트 결과
           </h1>
-
-          {/* Home Button (right side) */}
           <div className="absolute right-0 top-0 h-full flex items-center justify-center">
             <Link to="/">
               <div className="relative rounded-[16777200px] shrink-0 size-[36px] flex items-center justify-center">
@@ -166,15 +195,9 @@ export default function Result() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="pt-[58px] pb-8 px-6">
-        {/* Result Image Area (Swapped Layout: Gradient Top, Text Bottom) */}
         <div className="relative w-full aspect-[4/5] mb-[-40px] mt-6 flex flex-col items-center">
-
-          {/* Animated Circular Object Area (Top) */}
           <div className="relative w-full flex-[1.5] flex items-center justify-center">
-
-            {/* Particles Container */}
             <div className="absolute top-1/2 left-1/2 w-0 h-0 z-[40] pointer-events-none">
               {particles.map(p => (
                 <div
@@ -195,7 +218,6 @@ export default function Result() {
               ))}
             </div>
 
-            {/* The Circular Gradient Ball (3D) */}
             <div className="relative z-20 flex items-center justify-center">
               <div
                 className="relative flex items-center justify-center z-10"
@@ -213,7 +235,6 @@ export default function Result() {
             </div>
           </div>
 
-          {/* Text Content Area (Bottom) */}
           <div className="relative w-full flex-1 flex flex-col items-center text-center px-6 pt-2 z-40 transform translate-y-[-10px]">
             <h2 className="text-[32px] font-bold mb-2 tracking-[-0.02em] text-[#111827]">
               {prefType.type_name}
@@ -313,14 +334,22 @@ export default function Result() {
           )}
         </div>
 
-        {/* CTA Button */}
-        <Link to="/">
-          <div className="bg-black h-[57.5px] rounded-[12px] shadow-[0px_10px_15px_0px_rgba(0,0,0,0.1),0px_4px_6px_0px_rgba(0,0,0,0.1)] flex items-center justify-center cursor-pointer mt-8">
-            <p className="font-semibold text-[17px] text-white tracking-[-0.4316px]">
-              홈으로 이동
-            </p>
-          </div>
-        </Link>
+        {/* Share Button (Text Only Style) */}
+        <button
+          onClick={handleShare}
+          className="w-full flex items-center justify-center gap-2 cursor-pointer mt-12 mb-8 active:opacity-60 transition-opacity"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+          </svg>
+          <p className="text-[15px] font-medium text-[#9ca3af] tracking-tight">
+            내 취향 공유하기
+          </p>
+        </button>
       </main>
 
       {/* Perfume Detail Full-Screen Popup */}
