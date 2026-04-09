@@ -155,10 +155,11 @@ export default function Result() {
 
     const shareUrl = `${window.location.origin}/result?${params.toString()}`;
 
+    const shareText = `트라이센트 테스트 결과, 저는 '${prefType.type_name.trim()}' 유형이 나왔어요! 당신에게 어울리는 향수도 찾아보세요.\n\n${shareUrl}`.trim();
+
     const shareData = {
       title: '트라이센트 - 내 향수 취향 결과',
-      text: `트라이센트 테스트 결과, 저는 '${prefType.type_name.trim()}' 유형이 나왔어요! 당신에게 어울리는 향수도 찾아보세요.`.trim(),
-      url: shareUrl,
+      text: shareText
     };
 
     // 1. Try Native Share (Mobile iOS/Android)
