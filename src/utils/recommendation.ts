@@ -202,7 +202,8 @@ export function getRecommendedPerfumes(
   mood: MoodCode,
   energy: EnergyCode,
   place: PlaceCode,
-  isNeutral: boolean = false
+  isNeutral: boolean = false,
+  perfumesSource?: Perfume[]
 ): Perfume[] {
   // 1. 유저 어코드 점수 및 톱 2 계산
   let topAccords = calculateRecommendation(mood, place);
@@ -232,8 +233,8 @@ export function getRecommendedPerfumes(
     userScores[acc] += pPoints[acc] || 0;
   });
 
-  // 2. 살아있는 전체 향수 목록 가져옴
-  let filtered = perfumesDB.filter(p => p.is_active);
+  // 2. 살아있는 전체 향수 목록 가져옴 (소스가 있으면 소스 사용, 없으면 기존 DB 사용)
+  let filtered = (perfumesSource || perfumesDB).filter(p => p.is_active);
 
   // 1차 필터: 성별 매칭
   filtered = filtered.filter(p => {
@@ -292,7 +293,11 @@ export function getRecommendedPerfumes(
       return bMatchCore - aMatchCore; // 1(일치)인 향수가 상단으로
     }
     
-    // ③ 그래도 동점일 시, 내부 고정 순서 (향후 정의 전까지 임시로 ID순 정렬)
+    // ③ 그래도 동점일 시, 내부 관리자 정렬 순서(sort_order) 적용
+    const aOrder = a.perfume.sort_order ?? 999;
+    const bOrder = b.perfume.sort_order ?? 999;
+    if (aOrder !== bOrder) return aOrder - bOrder;
+    
     return a.perfume.perfume_id.localeCompare(b.perfume.perfume_id);
   });
   return scoredPerfumes.map(sp => sp.perfume);

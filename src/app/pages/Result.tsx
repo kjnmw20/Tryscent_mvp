@@ -4,6 +4,7 @@ import svgPaths from "../../imports/svg-krmgb6cs7e";
 import { calculateRecommendation, accordLabels, MoodCode, PlaceCode, EnergyCode, SeasonCode, Accord, getPrefType, moodLabels, placeLabels, seasonLabels, getRecommendedPerfumes } from "../../utils/recommendation";
 import { useEffect, useState, useMemo } from "react";
 import { Perfume, perfumesDB } from "../../data/perfumes";
+import { supabase } from "../../lib/supabase";
 
 export default function Result() {
   const [searchParams] = useSearchParams();
@@ -36,11 +37,50 @@ export default function Result() {
   const prefType = getPrefType(topAccords[0], topAccords[1], isNeutralCard);
 
   const [selectedPerfume, setSelectedPerfume] = useState<Perfume | null>(null);
+  const [dbPerfumes, setDbPerfumes] = useState<Perfume[]>([]);
+
+  // Supabase에서 데이터 가져오기
+  useEffect(() => {
+    async function fetchPerfumes() {
+      try {
+        const { data, error } = await supabase
+          .from('perfumes')
+          .select('*')
+          .eq('is_active', true)
+          .order('sort_order', { ascending: true });
+
+        if (error) throw error;
+        if (data) {
+          const formattedData = (data as any[]).map(p => {
+            // perfume_id가 숫자일 경우 PERFUME_001 형식으로 변환 (이미지 매칭용)
+            let formattedId = String(p.perfume_id);
+            if (!isNaN(Number(p.perfume_id)) && !formattedId.startsWith('PERFUME_')) {
+              formattedId = `PERFUME_${String(p.perfume_id).padStart(3, '0')}`;
+            }
+
+            return {
+              ...p,
+              perfume_id: formattedId,
+              accords: typeof p.accords === 'string' ? p.accords.split('|').filter(Boolean) : (p.accords || []),
+              season: typeof p.season === 'string' ? p.season.split('|').filter(Boolean) : (p.season || [])
+            };
+          });
+          console.log('Fetched and formatted perfumes from Supabase:', formattedData);
+          setDbPerfumes(formattedData as Perfume[]);
+        }
+      } catch (err) {
+        console.error('Error fetching perfumes from Supabase:', err);
+      }
+    }
+
+    fetchPerfumes();
+  }, []);
 
   const recommendedPerfumes = useMemo(() => {
-    // Both Q2, Q4 "잘 모르겠어요" -> 1,3항목 필터링 후 등록된 순서로 추천 
-    return getRecommendedPerfumes(q1State, q2State, q3State, q4State, isNeutralCard).slice(0, 3);
-  }, [q1State, q2State, q3State, q4State, isNeutralCard]);
+    // DB 데이터가 있으면 그것을 사용, 없으면 로컬 파일 사용
+    const source = dbPerfumes.length > 0 ? dbPerfumes : perfumesDB;
+    return getRecommendedPerfumes(q1State, q2State, q3State, q4State, isNeutralCard, source).slice(0, 3);
+  }, [q1State, q2State, q3State, q4State, isNeutralCard, dbPerfumes]);
 
   function renderEnergySentence() {
     switch (q3State) {
@@ -555,7 +595,7 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
         {/* 7. Bottom CTA Button Section */}
         <div className="p-6 pb-10 bg-white border-t border-[#f3f4f6] shrink-0">
           <a
-            href={`https://search.shopping.naver.com/search/all?query=${encodeURIComponent(perfume.perfume_name_kr)}`}
+            href={perfume.coupang_url || `https://search.shopping.naver.com/search/all?query=${encodeURIComponent(perfume.perfume_name_kr)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full h-[56px] bg-[#111827] rounded-[16px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
@@ -567,8 +607,13 @@ function PerfumeDetailPopup({ perfume, onClose }: { perfume: Perfume | null; onC
               <path d="M10 14L21 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <p className="text-center mt-3 text-[12px] text-[#9ca3af] font-normal">
-            네이버 쇼핑에서 확인
+          <p className="text-center mt-3 text-[11px] text-[#9ca3af] font-normal leading-relaxed break-keep px-4">
+            {perfume.coupang_url ? (
+              <>
+                쿠팡으로 이동<br />
+                (쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있습니다.)
+              </>
+            ) : "네이버 쇼핑에서 확인"}
           </p>
         </div>
 
